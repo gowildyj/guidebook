@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./Home.module.css";
 import { tripData } from "@/data";
 
-import Card from "@/components/Card";
+import ImageCard from "@/components/ImageCard";
+import IconCard from "@/components/IconCard";
 import DualTime from "@/components/DualTime";
 
 const Home = () => {
@@ -19,14 +20,16 @@ const Home = () => {
 
       <div className={styles.menuContainer}>
         {menuData.map((item) => (
-          <Card
+          <IconCard
             key={item.id}
             title={item.title}
-            description={item.description}
-            image={item.image}
+            icon={item.icon}
+            direction="row"
           />
         ))}
       </div>
+
+      {/* sample */}
     </div>
   );
 };

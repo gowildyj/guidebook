@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./Card.module.css";
+import styles from "./ImageCard.module.css";
 
-const Card = ({ title, description, image }) => {
+const ImageCard = ({ title, description, image }) => {
   return (
     <div className={styles.card}>
       {image && (
-        <div className={styles.imageContainer}>
+        <div className={styles.imageWrapper}>
           <img src={image} alt={title} className={styles.image} />
         </div>
       )}
@@ -19,4 +19,4 @@ const Card = ({ title, description, image }) => {
   );
 };
 
-export default Card;
+export default ImageCard;

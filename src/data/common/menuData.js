@@ -1,23 +1,27 @@
+import { AiOutlineCheckCircle } from "react-icons/ai";
+import { FaMapMarkedAlt, FaUtensils } from "react-icons/fa";
+import { MdOutlineCurrencyExchange } from "react-icons/md";
+
 export const menuData = [
   {
-    id: "m01",
-    title: "체크리스트",
-    description: "",
+    id: 1,
+    title: "준비물",
+    description: "빠진 물건 없이 꼼꼼하게!",
+    icon: AiOutlineCheckCircle,
     path: "/checklist",
-    image: "/hero.png",
   },
   {
-    id: "m02",
+    id: 2,
     title: "관광지",
-    description: "",
-    path: "/place",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400",
+    description: "호치민 & 붕따오 필수 코스",
+    icon: FaMapMarkedAlt,
+    path: "/places",
   },
   {
-    id: "m03",
-    title: "먹거리",
-    description: "",
+    id: 3,
+    title: "먹을거",
+    description: "현지인이 추천하는 맛집",
+    icon: FaUtensils,
     path: "/food",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400",
   },
 ];
