@@ -1,14 +1,14 @@
 /* Home.module.css */
 
 .container {
-  padding: var(--padding-inner);
+  padding: var(--padding-md);
 }
 
 .menuContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
-  gap: var(--gap);
+  gap: var(--gap-md);
 }
 
 /* 태블릿 이상 */
@@ -27,11 +27,11 @@
 
 /**/
 .menuHeader {
-  padding: var(--padding-inner-sm) 0;
+  padding: var(--padding-sm) 0;
 }
 
 .menuTitle {
   font-size: var(--font-xxl);
-  font-weight: bold;
-  padding: var(--padding-inner-sm) var(--padding-inner);
+  font-weight: var(--font-weight);
+  padding: var(--padding-sm) var(--padding-md);
 }

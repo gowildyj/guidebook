@@ -1,9 +1,16 @@
 :root {
-  --padding-inner: 16px;
-  --padding-inner-sm: 12px;
+  --padding-md: 16px;
+  --padding-sm: 12px;
 
-  --gap: 8px;
+  --margin-sm: 8px;
+  --margin-md: 10px;
+  --margin-lg: 12px;
+
+  --gap-sm: 4px;
+  --gap-md: 8px;
   --gap-lg: 16px;
+
+  --font-weight: 700;
 
   --font-xs: 14px;
   --font-sm: 16px;

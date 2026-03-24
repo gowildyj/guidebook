@@ -5,6 +5,7 @@ import { tripData } from "@/data";
 import ImageCard from "@/components/ImageCard";
 import IconCard from "@/components/IconCard";
 import DualTime from "@/components/DualTime";
+import Currency from "@/components/Currency";
 
 const Home = () => {
   const { menuData, overview } = tripData;
@@ -16,6 +17,7 @@ const Home = () => {
           <span>{overview.hello}</span>
         </h1>
         <DualTime overview={overview} />
+        <Currency overview={overview} />
       </header>
 
       <div className={styles.menuContainer}>
