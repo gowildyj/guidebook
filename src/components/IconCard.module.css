@@ -2,9 +2,9 @@
   background-color: var(--bg-sub);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
-  padding: 10px;
+  padding: var(--padding-inner);
   display: flex;
-  gap: 15px;
+  gap: var(--gap-lg);
   overflow: hidden;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -34,13 +34,13 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap);
   flex: 1;
   /* text-align: center; */
 }
 
 .title {
-  font-size: 20px;
+  font-size: var(--font-xl);
   font-weight: 600;
   color: var(--text-h);
   margin: 0;

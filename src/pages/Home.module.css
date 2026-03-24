@@ -1,14 +1,14 @@
 /* Home.module.css */
 
 .container {
-  padding: 10px;
+  padding: var(--padding-inner);
 }
 
 .menuContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
-  gap: 10px;
+  gap: var(--gap);
 }
 
 /* 태블릿 이상 */
@@ -27,11 +27,11 @@
 
 /**/
 .menuHeader {
-  padding: 10px 0;
+  padding: var(--padding-inner-sm) 0;
 }
 
 .menuTitle {
-  font-size: 28px;
+  font-size: var(--font-xxl);
   font-weight: bold;
-  padding: 10px 15px;
+  padding: var(--padding-inner-sm) var(--padding-inner);
 }
