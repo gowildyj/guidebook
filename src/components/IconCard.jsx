@@ -1,11 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./IconCard.module.css";
 
-const IconCard = ({ title, icon: Icon, direction = "column" }) => {
-  const cardClassName = `${styles.card} ${styles[direction]}`;
+const IconCard = ({ title, icon: Icon, path, direction = "column" }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    if (path) navigate(path);
+  };
 
   return (
-    <div className={cardClassName}>
+    <div
+      className={`${styles.card} ${styles[direction]}`}
+      onClick={handleClick}
+    >
       <div className={styles.iconWrapper}>
         {Icon && <Icon className={styles.icon} />}
       </div>

@@ -16,8 +16,10 @@ const Home = () => {
         <h1 className={styles.menuTitle}>
           <span>{overview.hello}</span>
         </h1>
-        <DualTime overview={overview} />
-        <Currency overview={overview} />
+        <div className={styles.infoContainer}>
+          <DualTime overview={overview} />
+          <Currency overview={overview} />
+        </div>
       </header>
 
       <div className={styles.menuContainer}>
@@ -26,6 +28,7 @@ const Home = () => {
             key={item.id}
             title={item.title}
             icon={item.icon}
+            path={item.path}
             direction="row"
           />
         ))}

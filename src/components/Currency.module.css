@@ -4,9 +4,10 @@
   justify-content: space-between;
   background-color: var(--bg-sub);
   padding: var(--padding-sm);
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border);
-  margin-top: var(--margin-md);
+  border-top: 1px solid var(--border);
+  /* border-radius: var(--border-radius); */
+  /* border: 1px solid var(--border); */
+  /* margin-top: var(--margin-md); */
 }
 
 .inputGroup,

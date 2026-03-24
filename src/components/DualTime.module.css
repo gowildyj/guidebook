@@ -3,9 +3,9 @@
   align-items: center;
   background: var(--bg-sub);
   padding: var(--padding-md);
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border);
-  margin-top: var(--margin-lg);
+  /* border: 1px solid var(--border); */
+  /* border-radius: var(--border-radius); */
+  /* margin-top: var(--margin-lg); */
   gap: var(--gap-md);
 }
 
