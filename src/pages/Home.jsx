@@ -24,7 +24,7 @@ const Home = () => {
         </div>
       </header>
 
-      <div className={styles.menuContainer}>
+      <div className={styles.iconMenuContainer}>
         {iconMenu.map((item) => (
           <IconCard
             key={item.path}
@@ -38,7 +38,7 @@ const Home = () => {
 
       <FullImageCard title="일정표" type="main" />
 
-      <div className={styles.menuContainer}>
+      <div className={styles.imageMenuContainer}>
         {imageMenu.map((item) => (
           <FullImageCard
             key={item.path}

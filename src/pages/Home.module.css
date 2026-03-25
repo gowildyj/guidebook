@@ -1,9 +1,9 @@
 .container {
   padding: var(--padding-xs) var(--padding-md);
-  padding-bottom: 65px;
 }
 
-.menuContainer {
+.iconMenuContainer,
+.imageMenuContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
@@ -12,19 +12,28 @@
 
 /* 태블릿 이상 */
 @media (min-width: 768px) {
-  .menuContainer {
+  .iconMenuContainer {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .imageMenuContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* 데스크탑 */
 @media (min-width: 1024px) {
-  .menuContainer {
+  .iconMenuContainer {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .imageMenuContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.menuContainer,
+.iconMenuContainer,
+.imageMenuContainer,
 .menuHeader {
   padding: var(--padding-sm) 0;
 }

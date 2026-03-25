@@ -1,0 +1,199 @@
+.container {
+  padding: var(--padding-md);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ticketCard {
+  background-color: var(--bg-sub);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.ticketHeader {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.airlineInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.airlineName {
+  font-weight: 700;
+  font-size: var(--font-md);
+  color: var(--accent);
+}
+
+.flightNo {
+  font-size: var(--font-sm);
+  color: var(--text-p);
+  opacity: 0.8;
+}
+
+.journeySection {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.city {
+  font-size: var(--font-sm);
+  color: var(--text-p);
+}
+
+.code {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-h);
+}
+
+.time {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.flightIconArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  padding: 0 15px;
+}
+
+.dottedLine {
+  height: 2px;
+  flex: 1;
+  background-image: linear-gradient(
+    to right,
+    var(--border) 50%,
+    transparent 50%
+  );
+  background-size: 8px 2px;
+}
+
+.movingPlane {
+  color: var(--accent);
+  transform: rotate(90deg);
+}
+
+/* 절취선 */
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.circleLeft,
+.circleRight {
+  width: 24px;
+  height: 24px;
+  background-color: var(--bg); /* 배경색과 똑같이 맞춰서 파인 효과 */
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  border: 1px solid var(--border);
+}
+
+.circleLeft {
+  left: -12px;
+}
+.circleRight {
+  right: -12px;
+}
+
+.dashedLine {
+  flex: 1;
+  border-top: 1.5px dashed var(--border);
+  margin: 0 10px;
+}
+
+.details {
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 11px;
+  color: var(--text-p);
+  letter-spacing: 1px;
+}
+
+.value {
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.barcodeArea {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.barcode {
+  width: 100%;
+  height: 40px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--text-p) 0,
+    var(--text-p) 2px,
+    transparent 2px,
+    transparent 4px,
+    var(--text-p) 4px,
+    var(--text-p) 5px
+  );
+  opacity: 0.5;
+}
+
+.barcodeNum {
+  font-size: 10px;
+  color: var(--text-p);
+  letter-spacing: 2px;
+}
+
+.notice {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-p);
+  opacity: 0.6;
+}

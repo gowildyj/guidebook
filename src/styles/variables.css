@@ -3,7 +3,7 @@
   --padding-sm: 12px;
   --padding-md: 16px;
   --padding-lg: 20px;
-  --padding-bottom: 60px;
+  --padding-bottom: 80px;
 
   --margin-sm: 8px;
   --margin-md: 10px;
@@ -16,12 +16,19 @@
   --font-family: "Pretendard", sans-serif;
   --font-weight: 700;
 
-  --font-xs: 14px;
+  /* --font-xs: 14px;
   --font-sm: 16px;
   --font-md: 18px;
   --font-lg: 20px;
   --font-xl: 24px;
-  --font-xxl: 28px;
+  --font-xxl: 28px; */
+
+  --font-xs: clamp(12px, 1.5vw, 14px);
+  --font-sm: clamp(14px, 2vw, 18px);
+  --font-md: clamp(16px, 2.5vw, 22px);
+  --font-lg: clamp(18px, 3vw, 26px);
+  --font-xl: clamp(22px, 4vw, 32px);
+  --font-xxl: clamp(26px, 5vw, 40px);
 
   --text: #4b5563;
   --text-h: #111827;

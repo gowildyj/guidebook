@@ -2,6 +2,8 @@ import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "@/components/Layout/MainLayout";
 import Home from "@/pages/Home";
 import Places from "@/pages/Places";
+import Timetable from "@/pages/Timetable";
+import FlightInfo from "@/pages/FlightInfo";
 // import CheckList from "@/pages/CheckList";
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/places" element={<Places />} />
-          <Route path="/checklist" element={<Places />} />
+          <Route path="/checklist" element={<FlightInfo />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

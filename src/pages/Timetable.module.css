@@ -1,0 +1,117 @@
+.container {
+  padding: 0 var(--padding-md);
+  color: var(--text-p);
+}
+
+/* 날짜 선택 바 */
+.dateSelector {
+  background-color: var(--bg-sub);
+  border-radius: var(--border-radius);
+  padding: var(--padding-md);
+  margin-bottom: var(--gap-lg);
+  border: 1px solid var(--border);
+}
+
+.dateInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  font-weight: 600;
+  margin-bottom: var(--gap-sm);
+  color: var(--accent);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.locationRange {
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+.navBtn {
+  all: unset;
+  cursor: pointer;
+  color: var(--text-h);
+}
+
+/* 타임라인 구조 */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineItem {
+  display: flex;
+  gap: var(--gap-md);
+  min-height: 90px;
+}
+
+/* 시간 영역 */
+.timeSection {
+  width: 50px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-top: 4px;
+}
+
+.timeText {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+/* 선과 점(아이콘) 영역 */
+.indicatorSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.dot {
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.3);
+}
+
+.line {
+  width: 2px;
+  flex: 1;
+  background-color: var(--border);
+  margin: 4px 0;
+}
+
+/* 내용 영역 */
+.contentSection {
+  flex: 1;
+  padding-bottom: var(--gap-lg);
+}
+
+.itemTitle {
+  margin: 0 0 6px 0;
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.detailBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: var(--font-xs);
+  color: var(--text-p);
+  border: 1px solid var(--border);
+}
