@@ -19,7 +19,7 @@ export const menuData = [
     id: 2,
     title: "항공권",
     icon: Plane,
-    path: "/checklist",
+    path: "/flightInfo",
     type: "icon",
   },
   {

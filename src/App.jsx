@@ -13,7 +13,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/places" element={<Places />} />
-          <Route path="/checklist" element={<FlightInfo />} />
+          <Route path="/flightInfo" element={<FlightInfo />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
