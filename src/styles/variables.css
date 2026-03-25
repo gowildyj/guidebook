@@ -1,6 +1,8 @@
 :root {
-  --padding-md: 16px;
+  --padding-xs: 8px;
   --padding-sm: 12px;
+  --padding-md: 16px;
+  --padding-lg: 20px;
   --padding-bottom: 60px;
 
   --margin-sm: 8px;
@@ -11,6 +13,7 @@
   --gap-md: 8px;
   --gap-lg: 16px;
 
+  --font-family: "Pretendard", sans-serif;
   --font-weight: 700;
 
   --font-xs: 14px;

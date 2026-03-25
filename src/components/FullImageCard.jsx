@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./ImageCard.module.css";
+import styles from "./FullImageCard.module.css";
 
-const ImageCard = ({ title, image }) => {
+const FullImageCard = ({ title, image, type = "sub" }) => {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${styles[type]}`}>
       {image && (
         <div className={styles.imageWrapper}>
           <img src={image} alt={title} className={styles.image} />
@@ -11,12 +11,9 @@ const ImageCard = ({ title, image }) => {
       )}
       <div className={styles.cardContent}>
         <span className={styles.title}>{title}</span>
-        {/* {description && (
-          <span className={styles.description}>{description}</span>
-        )} */}
       </div>
     </div>
   );
 };
 
-export default ImageCard;
+export default FullImageCard;

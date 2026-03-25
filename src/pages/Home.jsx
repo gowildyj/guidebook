@@ -2,13 +2,15 @@ import React from "react";
 import styles from "./Home.module.css";
 import { tripData } from "@/data";
 
-import ImageCard from "@/components/ImageCard";
+import FullImageCard from "@/components/FullImageCard";
 import IconCard from "@/components/IconCard";
 import DualTime from "@/components/DualTime";
 import Currency from "@/components/Currency";
 
 const Home = () => {
   const { menuData, overview } = tripData;
+  const iconMenu = menuData.filter((item) => item.type === "icon");
+  const imageMenu = menuData.filter((item) => item.type === "image");
 
   return (
     <div className={styles.container}>
@@ -23,13 +25,26 @@ const Home = () => {
       </header>
 
       <div className={styles.menuContainer}>
-        {menuData.map((item) => (
+        {iconMenu.map((item) => (
           <IconCard
-            key={item.id}
+            key={item.path}
             title={item.title}
             icon={item.icon}
             path={item.path}
             direction="row"
+          />
+        ))}
+      </div>
+
+      <FullImageCard title="일정표" type="main" />
+
+      <div className={styles.menuContainer}>
+        {imageMenu.map((item) => (
+          <FullImageCard
+            key={item.path}
+            title={item.title}
+            image={item.image}
+            path={item.path}
           />
         ))}
       </div>

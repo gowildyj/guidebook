@@ -1,5 +1,6 @@
 .container {
-  padding: var(--padding-sm) var(--padding-md);
+  padding: var(--padding-xs) var(--padding-md);
+  padding-bottom: 65px;
 }
 
 .menuContainer {
@@ -12,7 +13,7 @@
 /* 태블릿 이상 */
 @media (min-width: 768px) {
   .menuContainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -23,6 +24,7 @@
   }
 }
 
+.menuContainer,
 .menuHeader {
   padding: var(--padding-sm) 0;
 }

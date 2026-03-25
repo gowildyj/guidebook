@@ -1,7 +1,16 @@
 .appWrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: var(--padding-bottom);
+  /* padding-bottom: 80px; */
+  -webkit-overflow-scrolling: touch;
 }
 
 .topBar {
@@ -46,9 +55,4 @@
 
 .emptySpace {
   width: 40px;
-}
-
-.content {
-  flex: 1;
-  padding-bottom: var(--padding-bottom);
 }

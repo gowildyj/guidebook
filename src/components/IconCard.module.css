@@ -2,7 +2,7 @@
   background-color: var(--bg-sub);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
-  padding: var(--padding-md);
+  padding: var(--padding-xs);
   display: flex;
   gap: var(--gap-lg);
   overflow: hidden;
