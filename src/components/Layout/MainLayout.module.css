@@ -1,0 +1,47 @@
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  padding: var(--padding-sm);
+  background-color: var(--bg);
+  /* border-bottom: 1px solid var(--border); */
+}
+
+.backBtn {
+  all: unset;
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+  font-size: var(--font-md);
+  cursor: pointer;
+  gap: var(--gap-sm);
+}
+
+.pageTitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-md);
+  font-weight: var(--font-weight);
+  color: var(--text-h);
+  /* margin: 0; */
+}
+
+.emptySpace {
+  width: 40px;
+}
+
+.content {
+  flex: 1;
+  padding-bottom: var(--padding-bottom);
+}
