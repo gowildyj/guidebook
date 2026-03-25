@@ -13,7 +13,7 @@ import { tripData } from "@/data";
 import Navigation from "@/components/Layout/Navigation";
 
 const MainLayout = () => {
-  const { menuData } = tripData;
+  const { menuData, overview } = tripData;
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -21,7 +21,14 @@ const MainLayout = () => {
   const isHome = pathname === "/";
   const currentMenu = menuData.find((item) => item.path === pathname);
 
-  const pageTitles = isHome ? "아싸! 놀러간다" : currentMenu?.title || "";
+  const titleStr = (
+    <>
+      {overview.hello}&nbsp;&nbsp;
+      <span className={styles.highlight}>{overview.hello2}</span>&nbsp;&nbsp;
+      {overview.helloKor}
+    </>
+  );
+  const pageTitles = isHome ? titleStr : currentMenu?.title || "";
 
   return (
     <div className={styles.appWrapper}>

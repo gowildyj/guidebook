@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <header className={styles.menuHeader}>
-        <h1 className={styles.menuTitle}>
+        {/* <h1 className={styles.menuTitle}>
           <span>{overview.hello}</span>
-        </h1>
+        </h1> */}
         <div className={styles.infoContainer}>
           <DualTime overview={overview} />
           <Currency overview={overview} />
