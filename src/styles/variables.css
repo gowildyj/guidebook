@@ -1,4 +1,5 @@
 :root {
+  --padding-xxs: 4px;
   --padding-xs: 8px;
   --padding-sm: 12px;
   --padding-md: 16px;
@@ -8,6 +9,7 @@
   --margin-sm: 8px;
   --margin-md: 10px;
   --margin-lg: 12px;
+  --margin-xl: 24px;
 
   --gap-sm: 4px;
   --gap-md: 8px;
@@ -29,16 +31,22 @@
   --font-lg: clamp(18px, 3vw, 26px);
   --font-xl: clamp(22px, 4vw, 32px);
   --font-xxl: clamp(26px, 5vw, 40px);
-
+  --font-big: clamp(36px, 6vw, 48px);
   --text: #4b5563;
   --text-h: #111827;
+  --text-i: #ffffff;
+
   --bg: #fff;
   --bg-sub: #f9fafb;
+  --bg-i: #111827;
+
   --border: #e5e7eb;
-  --border-radius: 16px;
+  --border-radius-sm: 12px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 20px;
   --code-bg: #f4f3ec;
 
-  --accent: #3b82f6;
+  --accent: #0064de;
   --accent-bg: rgba(59, 130, 246, 0.08);
   --accent-border: rgba(59, 130, 246, 0.2);
   --social-bg: rgba(244, 243, 236, 0.5);
@@ -70,8 +78,12 @@
   :root {
     --text: #94a3b8;
     --text-h: #f8fafc;
+    --text-i: #0f172a;
+
     --bg: #0f172a;
     --bg-sub: #1e293b;
+    --bg-i: #f8fafc;
+
     --border: #334155;
     --border-radius: 16px;
 

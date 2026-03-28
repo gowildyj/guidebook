@@ -4,6 +4,7 @@ import Home from "@/pages/Home";
 import Places from "@/pages/Places";
 import Timetable from "@/pages/Timetable";
 import FlightInfo from "@/pages/FlightInfo";
+import HotelInfo from "@/pages/HotelInfo";
 // import CheckList from "@/pages/CheckList";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/places" element={<Places />} />
           <Route path="/flightInfo" element={<FlightInfo />} />
+          <Route path="/hotelInfo" element={<HotelInfo />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

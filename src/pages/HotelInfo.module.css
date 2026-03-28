@@ -1,0 +1,285 @@
+.container {
+  padding: var(--padding-md);
+}
+
+/* 탭 스타일 */
+.tabWrapper {
+  display: flex;
+  background: var(--bg-sub);
+  padding: var(--padding-xxs);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--margin-xl);
+  border: 1px solid var(--border);
+}
+
+.tab {
+  flex: 1;
+  padding: var(--padding-sm);
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: var(--font-md);
+  font-weight: var(--font-weight);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: var(--text-i);
+}
+
+/* 호텔 카드 메인 */
+.hotelCard {
+  background: var(--bg-sub);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* 이미지 뷰어 영역 (Swiper 컨테이너) */
+.imageViewer {
+  height: 240px;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.hotelImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--bg-sub);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  padding: var(--padding-xs);
+  &::after {
+    font-size: var(--font-lg);
+    font-weight: var(--font-weight);
+  }
+}
+
+:global(.swiper-button-next) {
+  right: var(--padding-md);
+}
+:global(.swiper-button-prev) {
+  left: var(--padding-md);
+}
+
+:global(.swiper-pagination-fraction) {
+  bottom: var(--padding-md);
+  right: var(--padding-md);
+  left: auto;
+  width: auto;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: var(--padding-xs) var(--padding-md);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-xs);
+  font-weight: var(--font-weight);
+  z-index: 10;
+}
+
+.typeBadge {
+  position: absolute;
+  top: var(--padding-md);
+  left: var(--padding-md);
+  background: var(--accent);
+  color: #fff;
+  padding: var(--padding-xs) var(--padding-xs);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight);
+  z-index: 10;
+}
+
+/* 정보 영역 */
+.infoArea {
+  padding: var(--padding-lg);
+}
+
+.nameKor {
+  font-size: var(--font-xl);
+  color: var(--text-h);
+  margin-bottom: var(--margin-sm);
+  font-weight: var(--font-weight);
+}
+
+.nameVie {
+  font-size: var(--font-md);
+  color: var(--text);
+}
+
+/* 주소 복사 박스 */
+.addressBox {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+  background: var(--bg);
+  padding: var(--padding-md);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  margin: var(--margin-xl) 0;
+}
+
+.addressText {
+  flex: 1;
+  font-size: var(--font-sm);
+  color: var(--text-h);
+  line-height: 1.5;
+}
+
+.accentIcon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* 그리드 정보 (시간/침대) */
+.gridInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-lg);
+}
+
+.gridItem {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+  background: var(--bg);
+  padding: var(--padding-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-sm);
+}
+
+.gridText span {
+  display: block;
+  font-size: var(--font-xs);
+  color: var(--text);
+  margin-bottom: var(--margin-sm);
+}
+
+.gridText strong {
+  font-size: var(--font-lg);
+  color: var(--text-h);
+}
+
+.dateTimeRow {
+  margin-bottom: var(--margin-sm);
+}
+.dateTimeRow:last-child {
+  margin-bottom: 0;
+}
+.dateTimeRow span {
+  font-size: var(--font-xs);
+  color: var(--accent);
+  font-weight: var(--font-weight);
+}
+.dateTimeRow strong {
+  font-size: var(--font-lg);
+  display: block;
+}
+
+/* 객실 상세 정보 스타일 */
+.roomInfo {
+  font-size: var(--font-lg);
+  display: block;
+  margin-bottom: var(--margin-sm);
+  color: var(--text-h);
+}
+.roomSubInfo {
+  font-size: var(--font-md);
+  color: var(--text-p);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.specialCard {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+  background: var(--accent-bg);
+  padding: var(--padding-lg);
+  border-radius: var(--border-radius-sm);
+  border: 1px dashed var(--accent-border);
+  margin-bottom: var(--margin-lg);
+}
+.specialText p {
+  font-size: var(--font-lg);
+  color: var(--text-h);
+  font-weight: var(--font-weight);
+  line-height: 1.5;
+  margin-top: var(--margin-sm);
+}
+
+.serviceSection {
+  padding: 0 var(--padding-lg) var(--padding-lg);
+}
+
+.specialText strong {
+  font-size: var(--font-md);
+  color: var(--accent);
+  display: block;
+  margin-bottom: var(--margin-sm);
+}
+
+.facilityList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-md);
+}
+
+.tag {
+  font-size: var(--font-sm);
+  color: var(--text);
+  background: var(--bg);
+  padding: var(--padding-xs);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border);
+}
+
+.buttonGroup {
+  padding: 0 var(--padding-lg) var(--padding-lg);
+}
+
+.mapBtn {
+  width: 100%;
+  padding: var(--padding-md);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-md);
+  cursor: pointer;
+}
+
+.notice {
+  text-align: center;
+  font-size: var(--font-sm);
+  color: var(--text);
+  margin-top: var(--margin-sm);
+}
+
+@media (max-width: 768px) {
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    /* display: none !important; */
+  }
+}

@@ -26,14 +26,14 @@ export const menuData = [
     id: 2,
     title: "호텔정보",
     icon: BedDouble,
-    path: "/checklist",
+    path: "/hotelInfo",
     type: "icon",
   },
   {
     id: 2,
     title: "예약정보",
     icon: TicketCheck,
-    path: "/checklist",
+    path: "/",
     type: "icon",
   },
   {
@@ -56,7 +56,7 @@ export const menuData = [
     id: 2,
     title: "일정표",
     icon: TicketCheck,
-    path: "/checklist",
+    path: "/",
     type: "icon_vertical",
   },
   {

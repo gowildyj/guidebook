@@ -1,7 +1,7 @@
 .card {
   background-color: var(--bg-sub);
   border: 1px solid var(--border);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-md);
   /* padding: var(--padding-md); */
   display: flex;
   flex-direction: column;
@@ -53,5 +53,5 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-top: var(--border-radius);
+  border-top: var(--border-radius-md);
 }

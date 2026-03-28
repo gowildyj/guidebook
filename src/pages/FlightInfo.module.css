@@ -3,45 +3,47 @@
 }
 
 .container {
-  padding: 20px;
+  padding: var(--padding-md);
 }
 
-/* 탭 디자인 */
+/* 탭 영역 */
 .tabWrapper {
   display: flex;
   background: var(--bg-sub);
-  padding: 4px;
-  border-radius: 12px;
-  margin-bottom: 24px;
+  padding: var(--padding-xxs);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--margin-xl);
+  border: 1px solid var(--border);
 }
 
 .tab {
   flex: 1;
-  padding: 10px;
+  padding: var(--padding-sm);
   border: none;
   background: transparent;
-  color: var(--text-p);
-  font-weight: 600;
-  border-radius: 8px;
+  color: var(--text);
+  font-size: var(--font-md);
+  font-weight: var(--font-weight);
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
-  transition: all 0.3s;
 }
 
 .tab.active {
-  background: var(--ka-blue);
-  color: #fff;
+  background: var(--accent);
+  color: var(--text-i);
 }
 
-/* 티켓 가독성 강화 */
+/* 티켓 카드 */
 .ticketCard {
   background: var(--bg-sub);
-  border-radius: 20px;
+  border-radius: var(--border-radius-lg);
   border: 1px solid var(--border);
   overflow: hidden;
+  margin-bottom: var(--margin-xl);
 }
 
 .ticketHeader {
-  padding: 16px 20px;
+  padding: var(--padding-md) var(--padding-lg);
   display: flex;
   justify-content: space-between;
   border-bottom: 1px dashed var(--border);
@@ -50,64 +52,74 @@
 .airline {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--gap-md);
 }
-.koreanAirCircle {
+.airlineCircle {
   width: 14px;
   height: 14px;
-  background: var(--ka-blue);
+  background: var(--accent);
   border-radius: 50%;
 }
 .airlineName {
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-weight: var(--font-weight);
+  font-size: var(--font-lg);
 }
-
-.journey {
-  padding: 30px 20px;
+.flightMeta {
   display: flex;
-  justify-content: space-between; /* 양 끝으로 밀기 */
+  flex-direction: column;
+  text-align: right;
+  gap: 2px;
+}
+.flightNo {
+  font-size: var(--font-lg);
+}
+.journey {
+  padding: var(--padding-lg);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .locBox {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  /* ★ 핵심: 양쪽 박스에 똑같은 너비를 줍니다. */
-  flex: 1;
-  /* 또는 고정 너비 (예: width: 100px;) */
+  gap: var(--gap-md);
 }
-
-/* 왼쪽 박스 (출발지) */
 .locBox:first-child {
   text-align: left;
   align-items: flex-start;
 }
-
-/* 오른쪽 박스 (도착지) */
 .locBox:last-child {
   text-align: right;
   align-items: flex-end;
 }
-.city {
-  font-size: 14px;
-  color: var(--text-p);
-}
+
 .code {
-  font-size: 42px;
+  font-size: var(--font-big);
   font-weight: 900;
   color: var(--text-h);
   line-height: 1;
-  /* 팁: 글자마다 너비가 미세하게 다른 걸 완전히 잡으려면 
-     고정 폭 숫자/폰트 설정을 더할 수도 있어요. */
   font-variant-numeric: tabular-nums;
 }
+.city {
+  font-size: var(--font-xxl);
+  font-weight: var(--font-weight);
+  color: var(--text-p);
+}
 .time {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--ka-blue);
+  font-size: var(--font-xl);
+  font-weight: var(--font-weight);
+  color: var(--accent);
+}
+
+.duration {
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
+  color: var(--text);
+  position: absolute;
+  top: -20px;
+  white-space: nowrap;
 }
 
 .planeIconArea {
@@ -118,186 +130,6 @@
   align-items: center;
 }
 .line {
-  width: 120%;
-  height: 1.5px;
-  background: var(--border);
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-}
-.movingPlane {
-  color: var(--ka-blue);
-  background: var(--bg-sub);
-  z-index: 2;
-  padding: 0 10px;
-}
-
-.ticketFooter {
-  display: flex;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  gap: 30px;
-}
-
-.footerInfo span {
-  display: block;
-  font-size: 11px;
-  color: var(--text-p);
-  margin-bottom: 4px;
-}
-.footerInfo strong {
-  font-size: 16px;
-  color: var(--text-h);
-}
-
-/* 하단 정보 카드 */
-.detailSection {
-  margin-top: 24px;
-}
-.infoRow {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.infoCard {
-  flex: 1;
-  background: var(--bg-sub);
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-.infoCardFull {
-  background: var(--bg-sub);
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  margin-bottom: 20px;
-}
-
-.cardHeader {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--ka-blue);
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-.infoCard p,
-.infoCardFull p {
-  font-size: 15px;
-  margin: 0;
-  color: var(--text-h);
-}
-.hint {
-  font-size: 12px;
-  color: var(--text-p);
-  margin-top: 8px;
-  display: block;
-}
-
-.checkinBtn {
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  border: none;
-  background: var(--ka-blue);
-  color: #fff;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-:root {
-  --ka-blue: #0064de;
-}
-
-.container {
-  padding: 20px;
-}
-
-/* 탭 디자인 */
-.tabWrapper {
-  display: flex;
-  background: var(--bg-sub);
-  padding: 4px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-  border: 1px solid var(--border);
-}
-
-.tab {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  background: transparent;
-  color: var(--text-p);
-  font-weight: 700;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.tab.active {
-  background: var(--ka-blue);
-  color: #fff;
-}
-
-/* 티켓 가독성 강화 */
-.ticketCard {
-  background: var(--bg-sub);
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  margin-bottom: 20px;
-}
-
-.journey {
-  padding: 25px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.locBox {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.locBox:first-child {
-  text-align: left;
-  align-items: flex-start;
-}
-.locBox:last-child {
-  text-align: right;
-  align-items: flex-end;
-}
-
-.code {
-  font-size: 42px;
-  font-weight: 900;
-  color: var(--text-h);
-  line-height: 1;
-}
-.city {
-  font-size: 13px;
-  color: var(--text-p);
-  margin-bottom: 4px;
-}
-.time {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--ka-blue);
-  margin-top: 4px;
-}
-
-.planeIconArea {
-  flex: 0 0 70px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.line {
   width: 100%;
   height: 1px;
   background: var(--border);
@@ -305,122 +137,186 @@
   top: 50%;
 }
 .movingPlane {
-  color: var(--ka-blue);
+  color: var(--accent);
   background: var(--bg-sub);
   z-index: 2;
-  padding: 0 8px;
+  padding: var(--padding-xs);
 }
 
-/* 미니 지도 섹션 */
-.mapSection {
+.ticketFooter {
+  display: flex;
+  padding: var(--padding-lg);
   background: var(--bg-sub);
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 20px;
+  gap: var(--gap-lg);
+}
+
+.footerInfo span {
+  display: block;
+  font-size: var(--font-sm);
+  margin-bottom: var(--margin-sm);
+}
+.footerInfo strong {
+  font-size: var(--font-md);
+  color: var(--text-h);
+}
+
+.seat {
+  display: flex;
+  gap: var(--gap-md);
+  margin-top: var(--margin-sm);
+}
+
+/* 상세 섹션 */
+.detailSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.infoRow {
+  display: flex;
+  gap: var(--gap-lg);
+}
+
+.infoCard {
+  flex: 1;
+  background: var(--bg-sub);
+  padding: var(--padding-md);
+  border-radius: var(--border-radius-sm);
   border: 1px solid var(--border);
 }
 
-.sectionHeader {
+.infoCardFull {
+  background: var(--bg-sub);
+  padding: var(--padding-lg);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border);
+}
+
+.cardHeader {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--gap-sm);
+  color: var(--accent);
+  font-weight: var(--font-weight);
+  margin-bottom: var(--margin-md);
+  font-size: var(--font-md);
+}
+
+.mainInfo {
+  font-size: var(--font-md);
+  margin-bottom: var(--margin-md);
   color: var(--text-h);
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 14px;
+}
+.subInfo {
+  font-size: var(--font-md);
+  color: var(--text-p);
 }
 
-.miniMap {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  padding: 15px;
-  border: 1px solid var(--border);
-}
-
-.mapLabels {
+/* 기내식 레이아웃 */
+.mealSelectionWrapper {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-direction: column;
+  gap: var(--gap-md);
+  margin-top: var(--margin-md);
 }
 
-.counterNode {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+.mealOption {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
   background: var(--bg);
+  padding: var(--padding-sm);
+  border-radius: var(--border-radius-sm);
   border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-p);
 }
 
-.counterNode.highlight {
-  background: var(--ka-blue);
-  color: #fff;
-  border-color: var(--ka-blue);
-}
-
-.mapFloor {
-  height: 30px;
-  background: var(--border);
-  border-radius: 4px;
+.mealImageWrapper,
+.mealImageSmall {
+  width: 150px;
+  height: 100px;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg-sub);
+}
+
+.mealImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.imageLabel {
+  font-size: var(--font-sm);
+  color: var(--text);
+}
+
+.mealInfoText {
+  flex: 1;
+}
+
+.mealTitle strong {
+  font-size: var(--font-lg);
   color: var(--text-h);
-}
-
-.mapDesc {
-  font-size: 11px;
-  color: var(--text-p);
-  margin-top: 10px;
   line-height: 1.5;
 }
 
-/* 하단 정보 카드 */
-.infoGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.infoCard {
-  background: var(--bg-sub);
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-.infoCardFull {
-  background: var(--bg-sub);
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-.cHeader {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--ka-blue);
-  font-weight: 700;
-  font-size: 13px;
-  margin-bottom: 8px;
+.mealDivider {
+  text-align: center;
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight);
+  color: var(--accent);
+  position: relative;
 }
 
-.actionBtn {
+.mealDivider::before,
+.mealDivider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: var(--border);
+}
+.mealDivider::before {
+  left: 0;
+}
+.mealDivider::after {
+  right: 0;
+}
+
+.drinkTip {
+  margin-top: var(--margin-lg);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: var(--gap-md);
+  font-size: var(--font-md);
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: var(--padding-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.checkinBtn {
   width: 100%;
-  padding: 16px;
-  border-radius: 12px;
+  padding: var(--padding-md);
+  border-radius: var(--border-radius-sm);
   border: none;
-  background: var(--ka-blue);
-  color: #fff;
-  font-weight: 700;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-top: 20px;
+  gap: var(--gap-md);
+  margin-top: var(--margin-md);
+  cursor: pointer;
 }

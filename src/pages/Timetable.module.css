@@ -6,7 +6,7 @@
 /* 날짜 선택 바 */
 .dateSelector {
   background-color: var(--bg-sub);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-md);
   padding: var(--padding-md);
   margin-bottom: var(--gap-lg);
   border: 1px solid var(--border);
