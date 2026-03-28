@@ -36,7 +36,9 @@ const Home = () => {
         ))}
       </div>
 
-      <FullImageCard title="일정표" type="main" />
+      <div className={styles.itineraryContainer}>
+        <FullImageCard title="일정표" type="main" />
+      </div>
 
       <div className={styles.imageMenuContainer}>
         {imageMenu.map((item) => (

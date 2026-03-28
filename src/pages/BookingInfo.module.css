@@ -1,0 +1,254 @@
+.container {
+  padding: var(--padding-md);
+}
+
+/* 💡 상단 예약 선택 리스트 디자인 */
+.selectorWrapper {
+  margin-bottom: var(--margin-xl);
+}
+
+.selectorTitle {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-p);
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.bookingList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-sub);
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.activeItem {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.bookingTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 50%;
+}
+
+.activeItem .dot {
+  background: var(--accent);
+}
+
+.activeItem .bookingTitle {
+  color: var(--accent);
+}
+
+.arrowIcon {
+  color: var(--border);
+}
+
+.activeItem .arrowIcon {
+  color: var(--accent);
+}
+
+/* 메인 카드 */
+.card {
+  background: var(--bg-sub);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: var(--padding-lg);
+}
+
+.header {
+  margin-bottom: var(--margin-lg);
+}
+
+.category {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 22px;
+  color: var(--text-h);
+  font-weight: 800;
+  margin: 6px 0;
+  line-height: 1.3;
+}
+
+.providerInfo {
+  font-size: 14px;
+  color: var(--text-p);
+}
+
+/* 핵심 정보 리스트 스타일 */
+.infoList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: var(--margin-lg) 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.iconWrapper {
+  width: 24px;
+  color: var(--accent);
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-p);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.mainText {
+  display: block;
+  font-size: 19px;
+  color: var(--text-h);
+  line-height: 1.4;
+}
+
+.accentText {
+  margin-top: 4px;
+  font-size: 17px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* 상세 일정 섹션 */
+.section {
+  margin-top: var(--margin-xl);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-h);
+  margin-bottom: 14px;
+}
+
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timeBadge {
+  flex: 0 0 65px;
+  background: var(--bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 3px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.activityText {
+  font-size: 16px;
+  color: var(--text-h);
+  font-weight: 700;
+}
+
+/* 준비물 섹션 */
+.reqGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reqItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-h);
+  border: 1px solid var(--border);
+}
+
+.checkIcon {
+  color: #2ecc71;
+}
+
+/* 하단 설명 */
+.descriptionArea {
+  margin-top: var(--margin-xl);
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  color: var(--text-p);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.voucherBtn {
+  width: 100%;
+  margin-top: var(--margin-xl);
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}

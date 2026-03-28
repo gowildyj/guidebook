@@ -33,7 +33,7 @@ export const menuData = [
     id: 2,
     title: "예약정보",
     icon: TicketCheck,
-    path: "/",
+    path: "/bookingInfo",
     type: "icon",
   },
   {

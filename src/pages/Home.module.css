@@ -34,8 +34,9 @@
 
 .iconMenuContainer,
 .imageMenuContainer,
+.itineraryContainer,
 .menuHeader {
-  padding: var(--padding-sm) 0;
+  padding: var(--padding-md) 0 var(--padding-xs) 0;
 }
 
 .menuTitle {

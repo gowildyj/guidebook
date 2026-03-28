@@ -5,7 +5,7 @@ import Places from "@/pages/Places";
 import Timetable from "@/pages/Timetable";
 import FlightInfo from "@/pages/FlightInfo";
 import HotelInfo from "@/pages/HotelInfo";
-// import CheckList from "@/pages/CheckList";
+import BookingInfo from "@/pages/BookingInfo";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/places" element={<Places />} />
           <Route path="/flightInfo" element={<FlightInfo />} />
           <Route path="/hotelInfo" element={<HotelInfo />} />
+          <Route path="/bookingInfo" element={<BookingInfo />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
