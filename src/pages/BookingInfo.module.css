@@ -139,6 +139,13 @@
   font-size: var(--font-xl);
   font-weight: var(--font-weight);
   color: var(--text-h);
+  margin-bottom: var(--margin-md);
+  line-height: 1.2;
+}
+
+.tourDesc {
+  font-size: var(--font-md);
+  color: var(--text);
   margin-bottom: var(--margin-xl);
   line-height: 1.2;
 }
@@ -148,6 +155,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
+  padding-top: var(--padding-sm);
 }
 .infoBox {
   display: flex;
@@ -227,7 +235,7 @@
   width: 2px;
   flex: 1;
   background: var(--border);
-  margin: var(--margin-md) 0;
+  margin: var(--margin-sm) 0 var(--padding-xl) 0;
 }
 
 .contentSide {
@@ -302,7 +310,7 @@
 }
 .descriptionArea svg {
   flex-shrink: 0;
-  margin: auto;
+  margin: auto 0;
 }
 .voucherBtn {
   width: 100%;

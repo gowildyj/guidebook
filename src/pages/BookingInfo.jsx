@@ -78,6 +78,7 @@ const BookingInfo = () => {
 
       <section className={styles.cardSection}>
         <h2 className={styles.tourTitle}>{current.title}</h2>
+        <span className={styles.tourDesc}>{current.description}</span>
         <div className={styles.gridInfo}>
           <div className={styles.infoBox}>
             <Calendar size={18} className={styles.infoIcon} />
@@ -198,8 +199,11 @@ const BookingInfo = () => {
               <X size={20} />
             </button>
             <div className={styles.sheetContent}>
+              <p className={styles.sheetTime}>{selectedSpot.time}</p>
               <h3 className={styles.sheetTitle}>{selectedSpot.activity}</h3>
-              <p className={styles.sheetTime}>{selectedSpot.time} 일정</p>
+              {selectedSpot.summary && (
+                <p className={styles.stepSummary}>{selectedSpot.summary}</p>
+              )}
               {selectedSpot.spotImg && (
                 <img
                   src={selectedSpot.spotImg}
