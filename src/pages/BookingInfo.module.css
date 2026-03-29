@@ -1,247 +1,270 @@
 .container {
-  padding: var(--padding-md);
+  padding: 20px;
+  background: #fdfdfd;
+  padding-bottom: 80px;
 }
 
-/* 💡 상단 예약 선택 리스트 디자인 */
-.selectorWrapper {
-  margin-bottom: var(--margin-xl);
+/* 헤더 & 선택 리스트 */
+.appHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
 }
-
-.selectorTitle {
-  display: block;
-  font-size: 13px;
+.headerIcon {
+  color: var(--accent);
+}
+.pageTitle {
+  font-size: 20px;
   font-weight: 800;
-  color: var(--text-p);
-  margin-bottom: 10px;
-  padding-left: 4px;
 }
 
 .bookingList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  margin-bottom: 32px;
 }
-
 .bookingItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg-sub);
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
+  background: #fff;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid #eee;
   cursor: pointer;
   transition: all 0.2s;
 }
-
 .activeItem {
   border-color: var(--accent);
   background: var(--accent-bg);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05);
 }
-
-.bookingTitle {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
+.itemTitle {
+  font-size: 16px;
   font-weight: 700;
-  color: var(--text-h);
+  color: #333;
 }
-
-.dot {
-  width: 6px;
-  height: 6px;
-  background: var(--border);
-  border-radius: 50%;
-}
-
-.activeItem .dot {
-  background: var(--accent);
-}
-
-.activeItem .bookingTitle {
+.activeItem .itemTitle {
   color: var(--accent);
 }
-
 .arrowIcon {
-  color: var(--border);
+  color: #ccc;
 }
-
 .activeItem .arrowIcon {
   color: var(--accent);
 }
 
 /* 메인 카드 */
 .card {
-  background: var(--bg-sub);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  padding: var(--padding-lg);
+  background: #fff;
+  border-radius: 28px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 32px;
+}
+.imageViewer {
+  height: 240px;
+  position: relative;
+  background: #000;
+}
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+.tourImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.header {
-  margin-bottom: var(--margin-lg);
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  background: rgba(255, 255, 255, 0.8);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #000;
 }
-
-.category {
-  color: var(--accent);
-  font-size: 12px;
+:global(.swiper-button-next::after),
+:global(.swiper-button-prev::after) {
+  font-size: 14px;
   font-weight: 900;
-  text-transform: uppercase;
 }
 
+.categoryBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  z-index: 10;
+}
+
+.infoArea {
+  padding: 24px;
+}
 .title {
   font-size: 22px;
-  color: var(--text-h);
   font-weight: 800;
-  margin: 6px 0;
-  line-height: 1.3;
+  margin-bottom: 16px;
 }
-
-.providerInfo {
-  font-size: 14px;
-  color: var(--text-p);
-}
-
-/* 핵심 정보 리스트 스타일 */
 .infoList {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  margin: var(--margin-lg) 0;
+  gap: 16px;
 }
-
 .listItem {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
+  align-items: center;
+  gap: 14px;
 }
-
-.listItem:last-child {
-  border-bottom: none;
-}
-
 .iconWrapper {
-  width: 24px;
-  color: var(--accent);
-  margin-top: 4px;
+  width: 36px;
+  height: 36px;
+  background: #f8fafc;
+  border-radius: 10px;
   display: flex;
+  align-items: center;
   justify-content: center;
-}
-
-.label {
-  display: block;
-  font-size: 13px;
-  color: var(--text-p);
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.mainText {
-  display: block;
-  font-size: 19px;
-  color: var(--text-h);
-  line-height: 1.4;
-}
-
-.accentText {
-  margin-top: 4px;
-  font-size: 17px;
   color: var(--accent);
-  font-weight: 800;
+}
+.listText span {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.listText strong {
+  font-size: 16px;
+  color: #334155;
 }
 
-/* 상세 일정 섹션 */
-.section {
-  margin-top: var(--margin-xl);
+/* 💡 타임라인 (상세 스케줄) */
+.timelineSection {
+  margin-bottom: 40px;
 }
-
 .sectionTitle {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
-  color: var(--text-h);
-  margin-bottom: 14px;
+  margin-bottom: 20px;
+}
+.accentIcon {
+  color: var(--accent);
 }
 
-.timelineContainer {
+.timelineBody {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
-
 .timelineItem {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 16px;
+  cursor: pointer;
 }
-
-.timeBadge {
-  flex: 0 0 65px;
-  background: var(--bg);
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  padding: 3px 6px;
-  border-radius: 8px;
-  font-size: 12px;
+.timeLabel {
+  flex: 0 0 55px;
+  font-size: 13px;
   font-weight: 800;
-  text-align: center;
+  color: var(--accent);
+  padding-top: 4px;
+}
+.lineArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px #eee;
+}
+.line {
+  width: 2px;
+  flex: 1;
+  background: #f1f5f9;
+  margin: 6px 0;
 }
 
-.activityText {
-  font-size: 16px;
-  color: var(--text-h);
+.stepContent {
+  flex: 1;
+  padding-bottom: 32px;
+}
+.stepDesc {
+  font-size: 17px;
   font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+.thumbWrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+}
+.spotThumb {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+.tapNotice {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
 }
 
-/* 준비물 섹션 */
+/* 준비물 */
+.section {
+  margin-bottom: 40px;
+}
 .reqGrid {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
-
 .reqItem {
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #eee;
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: var(--bg);
-  padding: 12px 16px;
-  border-radius: 12px;
+  gap: 12px;
   font-size: 16px;
   font-weight: 700;
-  color: var(--text-h);
-  border: 1px solid var(--border);
 }
 
-.checkIcon {
-  color: #2ecc71;
-}
-
-/* 하단 설명 */
+/* 하단 설명 & 바우처 */
 .descriptionArea {
-  margin-top: var(--margin-xl);
   padding: 16px;
-  background: var(--bg);
-  border-radius: 12px;
+  background: #f8fafc;
+  border-radius: 16px;
   display: flex;
   gap: 10px;
-  color: var(--text-p);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
 }
-
 .voucherBtn {
   width: 100%;
-  margin-top: var(--margin-xl);
-  padding: 16px;
-  border-radius: 12px;
+  padding: 18px;
+  border-radius: 16px;
   border: 2px solid var(--accent);
   background: transparent;
   color: var(--accent);
@@ -250,5 +273,291 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* 💡 바텀 시트 모달 */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+}
+.bottomSheet {
+  width: 100%;
+  background: #fff;
+  border-radius: 32px 32px 0 0;
+  padding: 24px 24px 50px;
+  animation: slideUp 0.3s ease-out;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+.sheetHandle {
+  width: 40px;
+  height: 5px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  margin: -10px auto 20px;
+}
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: #f1f5f9;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sheetTitle {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.sheetTime {
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.sheetImg {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.sheetDesc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 전체 레이아웃 */
+.container {
+  padding: 16px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* 1. 투어 선택 버튼 리스트 (통일감 부여) */
+.bookingSelector {
+  display: flex;
   gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.selectorItem {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #666;
+}
+.activeSelector {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* 2. 메인 비주얼 (호텔 스타일 슬라이더) */
+.mainVisual {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+/* 3. 예약 핵심 정보 영역 (카드 스타일) */
+.infoSection {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #eee;
+}
+.tourTitle {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #111;
+}
+.gridInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.infoBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+.infoBox span {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 700;
+}
+.infoBox strong {
+  font-size: 15px;
+  color: #1e293b;
+}
+
+/* 4. 공통 섹션 스타일 (상세 스케줄 & 준비물) */
+.contentSection {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #eee;
+}
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.sectionHeader h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+.accentIcon {
+  color: var(--accent);
+}
+
+/* 💡 타임라인 상세 디자인 */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+.timelineItem {
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.timeSide {
+  flex: 0 0 45px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent);
+  padding-top: 4px;
+}
+.lineSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #eee;
+}
+.line {
+  width: 2px;
+  flex: 1;
+  background: #f1f5f9;
+  margin: 4px 0;
+}
+
+.contentSide {
+  flex: 1;
+  padding-bottom: 28px;
+}
+.stepTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+.stepSummary {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.imageContainer {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+}
+.stepImg {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.moreLabel {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* 5. 준비물 체크 리스트 디자인 */
+.checkGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+.checkIcon {
+  color: #2ecc71;
 }
