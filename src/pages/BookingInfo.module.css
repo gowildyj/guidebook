@@ -1,344 +1,120 @@
 .container {
-  padding: 20px;
-  background: #fdfdfd;
-  padding-bottom: 80px;
+  padding: var(--padding-md);
+  background: var(--bg);
+  min-height: 100vh;
+  font-family: var(--sans);
+  color: var(--text);
 }
 
-/* 헤더 & 선택 리스트 */
-.appHeader {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
+/* 예약리스트 */
+.bookingSelector {
+  margin-bottom: var(--margin-xl);
 }
-.headerIcon {
-  color: var(--accent);
+.selectorLabel {
+  display: block;
+  font-size: var(--font-md);
+  font-weight: var(--font-weight);
+  color: var(--text);
+  margin-bottom: var(--margin-md);
+  padding-left: var(--padding-xxs);
 }
-.pageTitle {
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.bookingList {
+.listWrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 32px;
+  gap: var(--gap-md);
 }
-.bookingItem {
+.selectorItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  padding: 18px;
-  border-radius: 16px;
-  border: 1px solid #eee;
+  background: var(--bg);
+  padding: var(--padding-sm);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
 }
 .activeItem {
   border-color: var(--accent);
   background: var(--accent-bg);
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05);
 }
-.itemTitle {
-  font-size: 16px;
-  font-weight: 700;
-  color: #333;
+.itemContent {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
 }
-.activeItem .itemTitle {
-  color: var(--accent);
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 50%;
 }
-.arrowIcon {
-  color: #ccc;
+.activeItem .dot {
+  background: var(--accent);
 }
-.activeItem .arrowIcon {
+.itemTitleText {
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
+  color: var(--text-h);
+}
+.activeItem .itemTitleText {
   color: var(--accent);
 }
 
-/* 메인 카드 */
-.card {
-  background: #fff;
-  border-radius: 28px;
-  border: 1px solid #eee;
+/* 메인 이미지 슬라이더 */
+.mainVisual {
+  height: 250px;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  margin-bottom: 32px;
-}
-.imageViewer {
-  height: 240px;
   position: relative;
-  background: #000;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--margin-xl);
+  border: 1px solid var(--border);
+  background: var(--bg-sub);
 }
 .mySwiper {
   width: 100%;
   height: 100%;
 }
-.tourImage {
+
+.mainImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+.badge {
+  position: absolute;
+  top: var(--padding-md);
+  left: var(--padding-md);
+  z-index: 20;
+  background: var(--accent);
+  color: var(--text-i);
+  padding: var(--padding-xxs) var(--padding-xs);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight);
+}
 
-:global(.swiper-button-next),
+/* :global(.swiper-button-next),
 :global(.swiper-button-prev) {
-  background: rgba(255, 255, 255, 0.8);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  color: #000;
-}
-:global(.swiper-button-next::after),
-:global(.swiper-button-prev::after) {
-  font-size: 14px;
-  font-weight: 900;
+  background: rgba(255, 255, 255, 0.8) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  color: #000 !important;
 }
 
-.categoryBadge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: var(--accent);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 12px;
-  font-size: 12px;
+:global(.swiper-pagination-fraction) {
+  bottom: 16px !important;
+  right: 16px !important;
+  left: auto !important;
+  width: auto !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #fff !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
   font-weight: 800;
-  z-index: 10;
-}
-
-.infoArea {
-  padding: 24px;
-}
-.title {
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-.infoList {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.listItem {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.iconWrapper {
-  width: 36px;
-  height: 36px;
-  background: #f8fafc;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-}
-.listText span {
-  display: block;
-  font-size: 12px;
-  color: #94a3b8;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-.listText strong {
-  font-size: 16px;
-  color: #334155;
-}
-
-/* 💡 타임라인 (상세 스케줄) */
-.timelineSection {
-  margin-bottom: 40px;
-}
-.sectionTitle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-.accentIcon {
-  color: var(--accent);
-}
-
-.timelineBody {
-  display: flex;
-  flex-direction: column;
-}
-.timelineItem {
-  display: flex;
-  gap: 16px;
-  cursor: pointer;
-}
-.timeLabel {
-  flex: 0 0 55px;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--accent);
-  padding-top: 4px;
-}
-.lineArea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 8px;
-}
-.dot {
-  width: 12px;
-  height: 12px;
-  background: var(--accent);
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 1px #eee;
-}
-.line {
-  width: 2px;
-  flex: 1;
-  background: #f1f5f9;
-  margin: 6px 0;
-}
-
-.stepContent {
-  flex: 1;
-  padding-bottom: 32px;
-}
-.stepDesc {
-  font-size: 17px;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 10px;
-}
-.thumbWrapper {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #eee;
-  margin-bottom: 8px;
-}
-.spotThumb {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-}
-.tapNotice {
-  font-size: 12px;
-  color: var(--accent);
-  font-weight: 700;
-  text-decoration: underline;
-}
-
-/* 준비물 */
-.section {
-  margin-bottom: 40px;
-}
-.reqGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.reqItem {
-  background: #fff;
-  padding: 16px;
-  border-radius: 16px;
-  border: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-/* 하단 설명 & 바우처 */
-.descriptionArea {
-  padding: 16px;
-  background: #f8fafc;
-  border-radius: 16px;
-  display: flex;
-  gap: 10px;
-  font-size: 14px;
-  color: #64748b;
-  margin-bottom: 20px;
-}
-.voucherBtn {
-  width: 100%;
-  padding: 18px;
-  border-radius: 16px;
-  border: 2px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
-  font-size: 16px;
-  font-weight: 800;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-/* 💡 바텀 시트 모달 */
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  z-index: 9999;
-  display: flex;
-  align-items: flex-end;
-}
-.bottomSheet {
-  width: 100%;
-  background: #fff;
-  border-radius: 32px 32px 0 0;
-  padding: 24px 24px 50px;
-  animation: slideUp 0.3s ease-out;
-  max-height: 80vh;
-  overflow-y: auto;
-  position: relative;
-}
-.sheetHandle {
-  width: 40px;
-  height: 5px;
-  background: #e2e8f0;
-  border-radius: 10px;
-  margin: -10px auto 20px;
-}
-.closeBtn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  border: none;
-  background: #f1f5f9;
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.sheetTitle {
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-.sheetTime {
-  font-size: 15px;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-.sheetImg {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-.sheetDesc {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #475569;
 }
 
 @keyframes slideUp {
@@ -348,216 +124,269 @@
   to {
     transform: translateY(0);
   }
-}
+} */
 
-/* 전체 레이아웃 */
-.container {
-  padding: 16px;
-  background: #f8f9fa;
-  min-height: 100vh;
-}
-
-/* 1. 투어 선택 버튼 리스트 (통일감 부여) */
-.bookingSelector {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 16px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.selectorItem {
-  flex-shrink: 0;
-  padding: 10px 18px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  background: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  color: #666;
-}
-.activeSelector {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-
-/* 2. 메인 비주얼 (호텔 스타일 슬라이더) */
-.mainVisual {
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
-  height: 220px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-.mainImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 11px;
-}
-
-/* 3. 예약 핵심 정보 영역 (카드 스타일) */
-.infoSection {
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 16px;
-  border: 1px solid #eee;
+/* 카드 섹션 */
+.cardSection {
+  background: var(--bg-sub);
+  border-radius: var(--border-radius-lg);
+  padding: var(--padding-lg);
+  margin-bottom: var(--margin-xl);
+  border: 1px solid var(--border);
+  /* box-shadow: var(--shadow); */
 }
 .tourTitle {
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #111;
+  font-size: var(--font-xl);
+  font-weight: var(--font-weight);
+  color: var(--text-h);
+  margin-bottom: var(--margin-xl);
+  line-height: 1.2;
 }
+
+/* 핵심 정보 그리드 */
 .gridInfo {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--gap-md);
 }
 .infoBox {
   display: flex;
   align-items: center;
-  gap: 12px;
-  background: #f1f5f9;
-  padding: 12px 16px;
-  border-radius: 12px;
+  gap: var(--gap-lg);
+  padding: var(--padding-xs) 0;
+  border-bottom: 1px dashed var(--border);
+  cursor: pointer;
 }
-.infoBox span {
+.infoBox:last-child {
+  border-bottom: none;
+}
+.infoIcon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.infoText span {
   display: block;
-  font-size: 11px;
-  color: #64748b;
-  font-weight: 700;
+  font-size: var(--font-md);
+  color: var(--text);
+  margin-bottom: var(--margin-sm);
 }
-.infoBox strong {
-  font-size: 15px;
-  color: #1e293b;
+.infoText strong {
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
+  color: var(--text-h);
+  line-height: 1.4;
 }
 
-/* 4. 공통 섹션 스타일 (상세 스케줄 & 준비물) */
-.contentSection {
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 16px;
-  border: 1px solid #eee;
-}
+/* 타임라인 섹션 */
 .sectionHeader {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: var(--gap-md);
+  margin-bottom: var(--margin-lg);
 }
-.sectionHeader h3 {
-  font-size: 18px;
-  font-weight: 800;
-  color: #111;
+.sectionHeader span {
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
+  color: var(--text-h);
 }
 .accentIcon {
   color: var(--accent);
 }
 
-/* 💡 타임라인 상세 디자인 */
 .timeline {
   display: flex;
   flex-direction: column;
 }
 .timelineItem {
   display: flex;
-  gap: 12px;
-  cursor: pointer;
+  gap: var(--gap-md);
 }
 
 .timeSide {
-  flex: 0 0 45px;
-  font-size: 13px;
-  font-weight: 800;
+  flex: 0 0 40px;
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight);
   color: var(--accent);
-  padding-top: 4px;
+  padding-top: var(--padding-xs);
 }
 .lineSide {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 8px;
+  padding-top: var(--padding-xs);
 }
-.dot {
-  width: 10px;
-  height: 10px;
+.stepDot {
+  width: 6px;
+  height: 6px;
   background: var(--accent);
   border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 1px #eee;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
 }
-.line {
+.stepLine {
   width: 2px;
   flex: 1;
-  background: #f1f5f9;
-  margin: 4px 0;
+  background: var(--border);
+  margin: var(--margin-md) 0;
 }
 
 .contentSide {
   flex: 1;
-  padding-bottom: 28px;
+  padding-bottom: var(--padding-xl);
+  cursor: pointer;
 }
 .stepTitle {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 6px;
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
+  color: var(--text-h);
+  margin-bottom: var(--margin-sm);
 }
 .stepSummary {
-  font-size: 14px;
-  color: #64748b;
+  font-size: var(--font-md);
+  color: var(--text-sub);
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: var(--margin-md);
 }
-.imageContainer {
-  border-radius: 12px;
+.stepImageWrapper {
+  border-radius: var(--border-radius-md);
   overflow: hidden;
-  margin-bottom: 10px;
-  border: 1px solid #eee;
+  border: 1px solid #f1f5f9;
+  margin-bottom: var(--margin-md);
 }
-.stepImg {
+.stepImage {
   width: 100%;
   height: 160px;
   object-fit: cover;
 }
-.moreLabel {
-  font-size: 12px;
+.tapMore {
+  font-size: var(--font-sm);
   color: var(--accent);
-  font-weight: 700;
+  font-weight: var(--font-weight);
   text-decoration: underline;
 }
 
-/* 5. 준비물 체크 리스트 디자인 */
+/* 준비물 */
 .checkGrid {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap-md);
 }
 .checkItem {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px;
-  background: #f8fafc;
-  border-radius: 12px;
-  font-weight: 700;
-  color: #334155;
+  gap: var(--gap-md);
+  padding: var(--padding-md);
+  background: var(--bg);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border);
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight);
+  color: var(--text);
 }
 .checkIcon {
-  color: #2ecc71;
+  color: green;
+}
+
+/* 기타 공통 */
+.descriptionArea {
+  padding: var(--padding-md);
+  background: var(--bg-sub);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  gap: var(--gap-md);
+  font-size: var(--font-md);
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: var(--margin-lg);
+}
+.descriptionArea svg {
+  flex-shrink: 0;
+  margin: auto;
+}
+.voucherBtn {
+  width: 100%;
+  padding: var(--padding-md);
+  border-radius: var(--border-radius-md);
+  border: none;
+  background: var(--text-h);
+  color: var(--text-i);
+  font-size: var(--font-md);
+  font-weight: var(--font-weight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+/* 바텀 시트  */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+}
+.bottomSheet {
+  width: 100%;
+  background: var(--bg);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  padding: var(--padding-lg) var(--padding-lg) var(--padding-bottom);
+  animation: slideUp 0.3s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.sheetHandle {
+  width: 40px;
+  height: 5px;
+  background: var(--text);
+  border-radius: var(--border-radius-lg);
+  margin: -10px auto var(--margin-xl);
+}
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-sub);
+  border: none;
+  border-radius: 50%;
+  padding: var(--padding-xs);
+}
+.sheetTitle {
+  font-size: var(--font-xl);
+  font-weight: var(--font-weight);
+  margin-bottom: var(--margin-md);
+}
+.sheetTime {
+  font-size: var(--font-md);
+  color: var(--accent);
+  font-weight: var(--font-weight);
+  margin-bottom: var(--margin-md);
+}
+.sheetImg {
+  width: 100%;
+  /* height: 220px; */
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--margin-md);
+}
+.sheetDesc {
+  font-size: var(--font-md);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

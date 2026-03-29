@@ -12,12 +12,13 @@ import {
   Phone,
   CheckCircle2,
   Info,
-  ListChecks,
-  Sparkles,
+  Scroll,
+  Signpost,
   Ticket,
   X,
   ChevronRight,
   Clock,
+  ExternalLink,
 } from "lucide-react";
 import styles from "./BookingInfo.module.css";
 import { tripData } from "@/data";
@@ -30,22 +31,34 @@ const BookingInfo = () => {
   if (!bookingData || bookingData.length === 0) return null;
   const current = bookingData[activeIdx];
 
+  const makeCall = (number) => {
+    if (!number) return;
+    window.location.href = `tel:${number.replace(/[^0-9+]/g, "")}`;
+  };
+
   return (
     <div className={styles.container}>
-      {/* 1. 투어 선택 리스트 (상단 고정 스타일) */}
       <div className={styles.bookingSelector}>
-        {bookingData.map((item, idx) => (
-          <button
-            key={item.id || idx}
-            className={`${styles.selectorItem} ${activeIdx === idx ? styles.activeSelector : ""}`}
-            onClick={() => setActiveIdx(idx)}
-          >
-            {item.title}
-          </button>
-        ))}
+        <span className={styles.selectorLabel}>
+          나의 예약 리스트 ({bookingData.length})
+        </span>
+        <div className={styles.listWrapper}>
+          {bookingData.map((item, idx) => (
+            <button
+              key={item.id || idx}
+              className={`${styles.selectorItem} ${activeIdx === idx ? styles.activeItem : ""}`}
+              onClick={() => setActiveIdx(idx)}
+            >
+              <div className={styles.itemContent}>
+                <div className={styles.dot} />
+                <span className={styles.itemTitleText}>{item.title}</span>
+              </div>
+              <ChevronRight size={18} />
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* 2. 메인 이미지 슬라이더 (호텔 스타일) */}
       <div className={styles.mainVisual}>
         <Swiper
           key={current.id}
@@ -63,13 +76,12 @@ const BookingInfo = () => {
         <div className={styles.badge}>{current.category}</div>
       </div>
 
-      {/* 3. 예약 핵심 정보 영역 (날짜 및 시간) */}
-      <section className={styles.infoSection}>
+      <section className={styles.cardSection}>
         <h2 className={styles.tourTitle}>{current.title}</h2>
         <div className={styles.gridInfo}>
           <div className={styles.infoBox}>
-            <Calendar size={18} />
-            <div>
+            <Calendar size={18} className={styles.infoIcon} />
+            <div className={styles.infoText}>
               <span>날짜 및 시간</span>
               <strong>
                 {current.date} / {current.time}
@@ -77,63 +89,73 @@ const BookingInfo = () => {
             </div>
           </div>
           <div className={styles.infoBox}>
-            <MapPin size={18} />
-            <div>
-              <span>미팅 장소</span>
-              <strong>{current.meetingPoint}</strong>
+            <MapPin size={18} className={styles.infoIcon} />
+            <div className={styles.infoText}>
+              <span>장소</span>
+              <strong>{current.meetingPoint || current.location}</strong>
+            </div>
+          </div>
+          <div
+            className={styles.infoBox}
+            onClick={() => makeCall(current.contact)}
+          >
+            <Phone size={18} className={styles.infoIcon} />
+            <div className={styles.infoText}>
+              <span>연락처</span>
+              <strong>{current.contact}</strong>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. 투어 상세 스케줄 (타임라인 + 사진 + 상세설명) */}
-      <section className={styles.contentSection}>
-        <div className={styles.sectionHeader}>
-          <Sparkles size={20} className={styles.accentIcon} />
-          <h3>투어 상세 스케줄</h3>
-        </div>
-        <div className={styles.timeline}>
-          {current.itinerary?.map((step, i) => (
-            <div
-              key={i}
-              className={styles.timelineItem}
-              onClick={() => setSelectedSpot(step)}
-            >
-              <div className={styles.timeSide}>{step.time}</div>
-              <div className={styles.lineSide}>
-                <div className={styles.dot} />
-                {i !== current.itinerary.length - 1 && (
-                  <div className={styles.line} />
-                )}
-              </div>
-              <div className={styles.contentSide}>
-                <div className={styles.stepTitle}>{step.activity}</div>
-                {/* 간단 상세 설명 추가 */}
-                {step.summary && (
-                  <p className={styles.stepSummary}>{step.summary}</p>
-                )}
-                {/* 사진 옵션 (있을 때만 렌더링) */}
-                {step.spotImg && (
-                  <div className={styles.imageContainer}>
-                    <img
-                      src={step.spotImg}
-                      alt={step.activity}
-                      className={styles.stepImg}
-                    />
-                  </div>
-                )}
-                <span className={styles.moreLabel}>자세히 보기</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {current.itinerary?.length > 0 && (
+        <section className={styles.cardSection}>
+          <div className={styles.sectionHeader}>
+            <Signpost size={20} className={styles.accentIcon} />
+            <span>투어 상세 스케줄</span>
+          </div>
+          <div className={styles.timeline}>
+            {current.itinerary.map((step, i) => (
+              <div key={i} className={styles.timelineItem}>
+                <div className={styles.timeSide}>{step.time}</div>
+                <div className={styles.lineSide}>
+                  <div className={styles.stepDot} />
+                  {i !== current.itinerary.length - 1 && (
+                    <div className={styles.stepLine} />
+                  )}
+                </div>
+                <div
+                  className={styles.contentSide}
+                  onClick={() => setSelectedSpot(step)}
+                >
+                  <div className={styles.stepTitle}>{step.activity}</div>
 
-      {/* 5. 필수 준비물 영역 */}
-      <section className={styles.contentSection}>
+                  {step.summary && (
+                    <p className={styles.stepSummary}>{step.summary}</p>
+                  )}
+
+                  {step.spotImg && (
+                    <div className={styles.stepImageWrapper}>
+                      <img
+                        src={step.spotImg}
+                        alt={step.activity}
+                        className={styles.stepImage}
+                      />
+                    </div>
+                  )}
+
+                  <span className={styles.tapMore}>상세정보 확인</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className={styles.cardSection}>
         <div className={styles.sectionHeader}>
-          <ListChecks size={20} className={styles.accentIcon} />
-          <h3>필수 준비물</h3>
+          <Scroll size={20} className={styles.accentIcon} />
+          <span>필수 준비물</span>
         </div>
         <div className={styles.checkGrid}>
           {current.requirements?.map((req, i) => (
@@ -145,7 +167,20 @@ const BookingInfo = () => {
         </div>
       </section>
 
-      {/* 6. 바텀 시트 모달 */}
+      <div className={styles.descriptionArea}>
+        <Info size={14} />
+        <p>{current.description}</p>
+      </div>
+
+      {current.voucherUrl && (
+        <button
+          className={styles.voucherBtn}
+          onClick={() => window.open(current.voucherUrl)}
+        >
+          <ExternalLink size={18} /> 모바일 바우처 보기
+        </button>
+      )}
+
       {selectedSpot && (
         <div
           className={styles.modalOverlay}
@@ -172,10 +207,7 @@ const BookingInfo = () => {
                   alt="spot"
                 />
               )}
-              <p className={styles.sheetDesc}>
-                {selectedSpot.detail ||
-                  "현지 가이드가 상세히 안내해 드릴 예정입니다. 😊"}
-              </p>
+              <p className={styles.sheetDesc}>{selectedSpot.detail || ""}</p>
             </div>
           </div>
         </div>

@@ -38,7 +38,10 @@ export const bookingData = [
     location: "미토(My Tho) & 벤째(Ben Tre)",
     duration: "약 8시간 (08:30 - 16:30)",
     contact: "카카오톡 ID: vietnamgajago",
-    images: ["https://images.unsplash.com/photo-1528127269322-539801943592"],
+    images: [
+      "https://images.unsplash.com/photo-1528127269322-539801943592",
+      "https://images.unsplash.com/photo-1528127269322-539801943592",
+    ],
     requirements: [
       "편한 신발 (샌들 추천)",
       "모자 및 선글라스",
@@ -49,7 +52,12 @@ export const bookingData = [
     description:
       "한국어 가이드가 동행하는 우리 가족만의 단독 투어입니다. 나룻배 체험과 현지식 점심이 포함되어 있어요.",
     itinerary: [
-      { time: "08:30", activity: "호텔 로비 가이드 미팅 및 미토 이동" },
+      {
+        time: "08:30",
+        activity: "호텔 로비 가이드 미팅 및 미토 이동",
+        summary: "호텔 로비 가이드 미팅 및 미토 이동",
+        spotImg: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1",
+      },
       { time: "10:30", activity: "미토 도착 및 대형 보트 탑승" },
       { time: "11:30", activity: "유니온 아일랜드 관광 (꿀차, 열대과일 시식)" },
       { time: "12:30", activity: "나룻배(노젓는 배) 체험 및 현지식 점심" },
