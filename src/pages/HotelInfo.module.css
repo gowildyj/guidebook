@@ -59,37 +59,33 @@
 
 :global(.swiper-button-next),
 :global(.swiper-button-prev) {
-  background: rgba(0, 0, 0, 0.3);
-  color: var(--bg-sub);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  padding: var(--padding-xs);
-  &::after {
-    font-size: var(--font-lg);
-    font-weight: var(--font-weight);
-  }
-}
-
-:global(.swiper-button-next) {
-  right: var(--padding-md);
-}
-:global(.swiper-button-prev) {
-  left: var(--padding-md);
+  background: rgba(255, 255, 255, 0.8) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  color: #000 !important;
 }
 
 :global(.swiper-pagination-fraction) {
-  bottom: var(--padding-md);
-  right: var(--padding-md);
-  left: auto;
-  width: auto;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: var(--padding-xs) var(--padding-md);
-  border-radius: var(--border-radius-lg);
-  font-size: var(--font-xs);
-  font-weight: var(--font-weight);
-  z-index: 10;
+  bottom: 16px !important;
+  right: 16px !important;
+  left: auto !important;
+  width: auto !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #fff !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 800;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .typeBadge {

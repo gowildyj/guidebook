@@ -65,6 +65,7 @@ const BookingInfo = () => {
           modules={[Navigation, Pagination]}
           navigation={true}
           pagination={{ type: "fraction" }}
+          loop={true}
           className={styles.mySwiper}
         >
           {current.images?.map((imgUrl, index) => (

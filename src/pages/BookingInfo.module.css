@@ -95,7 +95,7 @@
   font-weight: var(--font-weight);
 }
 
-/* :global(.swiper-button-next),
+:global(.swiper-button-next),
 :global(.swiper-button-prev) {
   background: rgba(255, 255, 255, 0.8) !important;
   width: 32px !important;
@@ -124,7 +124,7 @@
   to {
     transform: translateY(0);
   }
-} */
+}
 
 /* 카드 섹션 */
 .cardSection {
