@@ -6,6 +6,7 @@ import Timetable from "@/pages/Timetable";
 import FlightInfo from "@/pages/FlightInfo";
 import HotelInfo from "@/pages/HotelInfo";
 import BookingInfo from "@/pages/BookingInfo";
+import CheckList from "@/pages/CheckList";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/places" element={<Places />} />
+          <Route path="/checklist" element={<CheckList />} />
           <Route path="/flightInfo" element={<FlightInfo />} />
           <Route path="/hotelInfo" element={<HotelInfo />} />
           <Route path="/bookingInfo" element={<BookingInfo />} />
